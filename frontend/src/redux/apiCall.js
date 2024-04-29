@@ -51,7 +51,6 @@ export const login = (value) => async (dispatch) => {
 // loading user
 export const loaduser = () => async (dispatch) => {
     try {
-        dispatch(Loginreq())
         const { data } = await axios.get(`${baseUrl}/api/v1/user/me`, { withCredentials: true })
         console.log(data);
         dispatch(Loginsuccess(data))
